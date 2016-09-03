@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="topspots">
+
+<head>
+    <meta charset="utf-8">
+    <title>San Diego Top Spots</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body ng-controller="HomeController">
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Top Spots Angular</h1>
+        </div> 
+        <div class="panel panel-primary">
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="spot in topspots">
+                        <td>{{spot.name}}</td>
+                        <td>{{spot.description}}</td>
+                        <td>
+                            <a href="https://maps.google.com?q={{spot.location[0]}},{{spot.location[1]}}" 
+                            class="btn btn-primary">
+                            Go To Google Maps
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <!-- //bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- //inject:js -->
+    <script src="index.js"></script>
+    <script src="home.controller.js"></script>
+    <script src="topspots.factory.js"></script>
+</body>
+
+</html>
+
